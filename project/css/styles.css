@@ -1,0 +1,51 @@
+body{
+
+}
+h2.playerName {
+	clear:left;
+	font-weight: bold;
+	font-size: 16pt;
+
+}
+
+.table {
+	text-align: center;
+	width: 300px;
+}
+/*tbody {
+	border:1px solid black;
+}
+
+tr, th, td {
+	border:1px solid black;
+}*/
+
+th {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+th, td {
+	padding: 5px;
+}
+
+#header {
+	font-size: 24pt;
+	font-weight: bold;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
+
+#wrapper {
+	width: 80%;
+	margin: auto;
+}
+
+.singlePlayer {
+	margin-top: 20px;
+}
+
+#searchBox {
+	width:50%;
+}
