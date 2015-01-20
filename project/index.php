@@ -1,4 +1,8 @@
 <html>
+<!--Jacob Grossman
+January 19, 2015
+INFO 344 Assignment 1
+  -->
 <head>
 	<title>NBA Player Stats &amp; Search</title>
 	<?php 
@@ -6,6 +10,8 @@
 		include 'query.php'
 	?>
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
 	<!--<link rel="stylesheet" type="text/css" href="css/reset.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -31,12 +37,16 @@
 
 	<div id="results">
 		<?php
-
+			//Executes query and finds matches
 			if(isset($_GET["player"])) {
 				$a = executeQuery();
 				$searchResults = search($_GET["player"], $a);
-
+				$numResults = 0;
 				if(count($searchResults) >= 1) {
+					if(count($searchResults) >=10) {
+						print("<p id='maxResults'>Your search return a large number of results. Displaying the first 10. Please refine your search terms.");
+					}
+					//outputs search results
 					foreach($searchResults as $player){
 		?>
 						<div class="singlePlayer">
@@ -60,7 +70,12 @@
 								</tbody>
 							<table>
 						</div>
-		<?php		}
+		<?php			//stops displaying more results once 10 have been displayed
+						$numResults++;
+						if($numResults >= 10) {
+							break;
+						}
+					}
 				
 				}  else {
 					print("<p id='noResult'> No Search Results Found");

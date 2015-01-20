@@ -1,5 +1,6 @@
 <?php
-
+//Jacob Grossman - January 19, 2015
+//Player Class to capture player data for presentation
 class Player {
 	private $name;
 	private $gamesPlayed;
@@ -8,6 +9,7 @@ class Player {
 	private $freeThrowPer;
 	private $pointsPerGame;
 
+	//Accepts paramenters for player stats. Handles nulls with no modification 
 	public function __construct($playerName, $gp, $fgp, $tpp, $ftp, $ppg) {
 		$this->name=$playerName;
 		$this->gamesPlayed=$gp;
@@ -16,6 +18,7 @@ class Player {
 		$this->freeThrowPer=$ftp;
 		$this->pointsPerGame=$ppg;
 	}
+
 
 	public function getPlayerName() {
 		return $this->name;

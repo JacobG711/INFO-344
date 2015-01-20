@@ -49,3 +49,7 @@ th, td {
 #searchBox {
 	width:50%;
 }
+
+#maxResults {
+	font-weight: bold;
+}
